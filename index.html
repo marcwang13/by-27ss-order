@@ -328,7 +328,7 @@ tfoot td{font-weight:700;background:var(--sunk)}
       <input type="file" id="x-file" accept=".xlsx" hidden>
       <span class="xlhint" id="x-msg"></span>
     </div>
-    <p class="sznote fxnote"><b>價格說明</b>台幣價＝韓國 MSRP × 0.0245 直接換算（四捨五入到 10 元），<b>尚未加關稅、運費等成本</b>，僅供下單參考，正式售價另行公告。</p><p class="sznote"><b>分類</b>上方分「上身／下身／配件／鞋款」，下一排可再依系列篩選（涼感透氣、登山健行、越野跑、攀岩、DNS 頂規…）。綠色 WHL 標記＝我們的 Sample／展示會建議款；「台灣市場」是依台灣氣候給的下單建議。</p><p class="sznote"><b>尺寸</b>照原廠開的尺寸段。數字下方小字是<b>參考對照，非原廠尺寸表</b>：上衣為韓國通用尺碼（數字約等於胸圍 cm；男 95＝M、100＝L，女 85＝S、90＝M），褲子為腰圍 cm 換算英吋，鞋款為 mm 換算 US 碼。各款實際尺寸以原廠規格為準。字母尺寸 XS～3XL，F＝單一尺寸。斜線灰格＝這個顏色沒開的尺寸。</p>
+    <p class="sznote fxnote"><b>價格說明</b>台幣價＝韓國 MSRP × 0.0245 直接換算（四捨五入到 10 元），<b>尚未加關稅、運費等成本</b>，僅供下單參考，正式售價另行公告。</p><p class="sznote"><b>分類</b>上方分「上身／下身／配件／鞋款」，下一排可再依系列篩選（涼感透氣、登山健行、越野跑、攀岩、DNS 頂規…）。「台灣市場」是依台灣氣候給的下單建議。</p><p class="sznote"><b>尺寸</b>照原廠開的尺寸段。數字下方小字是<b>參考對照，非原廠尺寸表</b>：上衣為韓國通用尺碼（數字約等於胸圍 cm；男 95＝M、100＝L，女 85＝S、90＝M），褲子為腰圍 cm 換算英吋，鞋款為 mm 換算 US 碼。各款實際尺寸以原廠規格為準。字母尺寸 XS～3XL，F＝單一尺寸。斜線灰格＝這個顏色沒開的尺寸。</p>
   </div>
   <div class="rail">
     <div class="wrap">
@@ -337,7 +337,7 @@ tfoot td{font-weight:700;background:var(--sunk)}
       <div class="row2">
         <div class="chips" id="months" aria-label="月份"></div>
         <input class="search" id="q" type="search" placeholder="搜尋品名、款號、色碼、顏色">
-        <label class="toggle"><input type="checkbox" id="whlonly"> 只看 WHL 建議款</label><label class="toggle"><input type="checkbox" id="only"> 只看已下單</label>
+        <label class="toggle"><input type="checkbox" id="only"> 只看已下單</label>
       </div>
     </div>
   </div>
@@ -511,10 +511,10 @@ function itemHTML(it){
     <div class="pic">${picHTML(it)}</div>
     <div class="info">
       <div class="t1"><h3>${esc(it.zh||it.en)}</h3>${it.zh?`<span class="en">${esc(it.en)}</span>`:''}</div>
-      <div class="meta"><span class="tag c">${esc(it.color)}${it.cc?' · '+esc(it.cc):''}</span>${it.monTag?`<span class="tag m">${esc(it.monTag)}${it.eta?' · '+esc(it.eta):''}</span>`:''}${it.drop==='DNS'?'<span class="tag">DNS</span>':''}${it.cat?`<span class="tag">${esc(it.cat)}</span>`:''}${it.gen?`<span class="tag">${esc(it.gen)}</span>`:''}${it.whl?'<span class="tag w">WHL</span>':''}${it.icon?`<span class="tag">${esc(it.icon)}</span>`:''}</div>
+      <div class="meta"><span class="tag c">${esc(it.color)}${it.cc?' · '+esc(it.cc):''}</span>${it.monTag?`<span class="tag m">${esc(it.monTag)}${it.eta?' · '+esc(it.eta):''}</span>`:''}${it.drop==='DNS'?'<span class="tag">DNS</span>':''}${it.cat?`<span class="tag">${esc(it.cat)}</span>`:''}${it.gen?`<span class="tag">${esc(it.gen)}</span>`:''}${it.icon?`<span class="tag">${esc(it.icon)}</span>`:''}</div>
       <div class="code">${esc(it.style||'')}${it.sku?' ／ '+esc(it.sku):''}${it.theme&&it.theme!=='CORE'?' ／ '+esc(it.theme)+(it.drop?' '+esc(it.drop):''):''}</div>
       ${it.ov?`<p class="ov">${esc(it.ov)}</p>`:''}
-      ${it.note?`<div class="note">${esc(it.note)}</div>`:''}${it.whl?`<div class="whl"><b>WHL 建議款</b>　${esc(it.whlr||'')}</div>`:''}${it.tw?`<div class="tw"><b>台灣市場</b>　${esc(it.tw)}</div>`:''}
+      ${it.note?`<div class="note">${esc(it.note)}</div>`:''}${it.whl&&it.whlr?`<div class="whl">${esc(it.whlr)}</div>`:''}${it.tw?`<div class="tw"><b>台灣市場</b>　${esc(it.tw)}</div>`:''}
       ${(it.dt||it.tech||it.fab)?`<button class="more" data-more>${open?'收合':'商品細節與材質'}</button>`:''}
       ${open?`<div class="detail">${it.ov?`<div><h4>商品概述</h4><p>${esc(it.ov)}</p></div>`:''}${it.dt?`<div><h4>商品細節</h4><p>${esc(it.dt)}</p></div>`:''}${it.tech?`<div><h4>材質與科技</h4><p>${esc(it.tech)}</p></div>`:''}${it.fab?`<div><h4>布料</h4><p>${esc(it.fab)}</p></div>`:''}</div>`:''}
     </div>
@@ -955,7 +955,7 @@ async function buildBook(qty, meta){
     let r=5;
     for(const it of its){
       const row=ws.getRow(r); const q=qty[it.id]||{};
-      const vals=[it.id,it.no||'',null,null,it.mon||'',it.theme||'',it.drop||'',it.cat||'',it.gen||'',it.style||'',it.zh||'',it.en,it.color,it.cc||'',it.sku||'',it.icon||'',it.fab||'',it.series||'',it.ov||'',it.dt||'',it.tech||'',[it.note,it.whl?'WHL 建議款：'+(it.whlr||''):'',it.tw?'台灣市場：'+it.tw:''].filter(Boolean).join('\n'),it.launch||'',it.krw||null,it.price||null];
+      const vals=[it.id,it.no||'',null,null,it.mon||'',it.theme||'',it.drop||'',it.cat||'',it.gen||'',it.style||'',it.zh||'',it.en,it.color,it.cc||'',it.sku||'',it.icon||'',it.fab||'',it.series||'',it.ov||'',it.dt||'',it.tech||'',[it.note,it.whl?(it.whlr||''):'',it.tw?'台灣市場：'+it.tw:''].filter(Boolean).join('\n'),it.launch||'',it.krw||null,it.price||null];
       vals.forEach((v,k)=>{ const c=row.getCell(k+1); c.value=v; c.font=F; c.border=border; c.alignment={vertical:k>=16&&k<=21?'top':'middle',wrapText:k>=5}; });
       row.getCell(cPrice).numFmt='#,##0'; row.getCell(cPrice-1).numFmt='#,##0';
       sizes.forEach((z,j)=>{ const c=row.getCell(cS0+j); c.border=border; c.alignment={horizontal:'center',vertical:'middle'}; c.font={...F,bold:true};
