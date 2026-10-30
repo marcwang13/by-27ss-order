@@ -89,7 +89,8 @@ def szkey(z):
     z=str(z)
     if z in LETTER: return (0,LETTER.index(z),0)
     if z=='999': return (4,0,0)
-    try: v=int(z); return ((1 if 85<=v<=130 else 2 if v<85 else 3),v,0)
+    WAIST={66,69,71,74,76,79,81,84,86,91,96,101,106}
+    try: v=int(z); return ((2 if v in WAIST else 1 if 85<=v<=130 else 3 if v<85 else 4),v,0)
     except: return (5,0,0)
 
 def build_ss():
