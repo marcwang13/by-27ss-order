@@ -274,6 +274,7 @@ Marc 要把四套系統（含後台、管理頁）串進另一個入口網站。
 
 | 日期 | AI | 系統 | 內容 | commit |
 |---|---|---|---|---|
+| 2026-11-10 | Claude | BY27SS | 跟新的 27SS Dashboard（…AKfycbxY7psb9…/exec）逐款核對：747 款色、尺寸、英文品名全部一致，沒有新增或刪除。依 Dashboard 新欄位 included_in_sample 把「展示會有樣品」從 70 擴到 207 個款色（tools/ss_dash_1110.txt）。鞋款加註原廠款號（2TSBY-XOX…）。CAD 仍缺 218 個款色 | （本次） |
 | 2026-11-10 | Claude | BY27SS | 依原廠「KOREA TARGET 27SS APPAREL PACKING LIST」標了「샘플 O」的 74 個款色，在備註加「展示會有樣品」（對到 70 個款色／58 款）。名單在 tools/ss_samples.json | （本次） |
 | 2026-11-10 | Claude | BY27SS、BY27FW | 拿掉價格（韓國 MSRP、台幣換算、零售金額）與韓國入倉日：資料欄位清空、卡片與統計隱藏金額、Excel 訂單本隱藏價格欄（欄位順序不變，匯入照舊）。27SS 拿掉 Sample 選款敘述，改成「台灣主打」標籤與篩選（47 款），沒有台灣市場備註的補上；上市月改成「台灣預計 N 月上市」（韓國入倉月往後一個月）。27FW 配件主打加 4 款。台灣定價公告後要把價格放回來。Apps Script 沒動，通知信的 Excel 金額會是 0 | （本次） |
 | 2026-11-02 | Grok Bot | SDR、BY27SS、BY27FW | 一鍵統整交單：先重抓最新訂單並跑 handoffCheck，件數對不上就警告、不匯出 | b43842b／d0a4f4b／f791e22 |
