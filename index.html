@@ -502,7 +502,7 @@ function picHTML(it){
   const h = it.doll||ph[0];
   const src = h && IMG[h];
   const sw = (it.doll || ph.length) ? `<div class="sw">${it.doll?'<button data-pic="doll">款式圖</button>':''}${ph.length?`<button data-pic="photo">實體圖${ph.length>1?' '+ph.length:''}</button>`:''}</div>` : '';
-  const rn = it.ref&&it.doll ? `<div class="refnote">${it.ref===1?'同款，顏色不同，僅供參考':'同款式（另一性別）圖，僅供參考'}</div>` : '';
+  const rn = it.ref&&it.doll ? `<div class="refnote">${it.ref===1?'同款，顏色不同，僅供參考':it.ref===3?'同系列鞋款（27FW 圖），配色不同，僅供參考':'同款式（另一性別）圖，僅供參考'}</div>` : '';
   return src ? `<img src="${src}" alt="${esc(it.en+' '+it.color)}" data-zoom loading="lazy">${rn}${sw}` : `<span class="none">圖片待補</span>`;
 }
 const big = h=>`big/${h}.jpg`;
