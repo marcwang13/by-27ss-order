@@ -274,6 +274,7 @@ Marc 要把四套系統（含後台、管理頁）串進另一個入口網站。
 
 | 日期 | AI | 系統 | 內容 | commit |
 |---|---|---|---|---|
+| 2026-11-12 | Claude | BY27SS、BY27FW | 沒有上市月的款式一律補上相近款的月份：27FW 509 款色（208 款）、27SS 35 款色（26 款）。27FW 依「同品名→同系列＋同品類＋款號最近」找參考款；配件與鞋款（56 款）同季沒有已知款，用全季最多款的 11 月。27SS 依「同品類＋同系列＋同性別＋款號最近」。對照表在 `tools/launch_infer.csv`（改月份只要改 data.js 的 `monTag`／`launch`）；頁面說明文字改成「月份參考相近款推估」| （本次） |
 | 2026-11-12 | Claude | BY27SS、BY27FW | 台灣建議售價定案（公司 TW-SRP 價格表，一款色一價）：data.js 的 `price` 填入（27SS 747 款色全有；27FW 645 款色，40 個中國專屬款色表上沒填，卡片顯示「售價待確認」）；卡片、小計、總計、Excel 訂單本的價格欄與零售金額放回來（韓國入倉、韓國 MSRP 欄仍隱藏、仍是空的）；拿掉 index.html 結尾的 NOPRICE-SWEEP；Apps Script `SHOW_PRICE` 改 true（**要貼進 Apps Script 編輯器並部署新版本才生效**）| （本次） |
 | 2026-11-10 | Claude | BY27SS | 跟新的 27SS Dashboard（…AKfycbxY7psb9…/exec）逐款核對：747 款色、尺寸、英文品名全部一致，沒有新增或刪除。依 Dashboard 新欄位 included_in_sample 把「展示會有樣品」從 70 擴到 207 個款色（tools/ss_dash_1110.txt）。鞋款加註原廠款號（2TSBY-XOX…）。CAD 仍缺 218 個款色 | （本次） |
 | 2026-11-10 | Claude | BY27SS | 依原廠「KOREA TARGET 27SS APPAREL PACKING LIST」標了「샘플 O」的 74 個款色，在備註加「展示會有樣品」（對到 70 個款色／58 款）。名單在 tools/ss_samples.json | （本次） |
