@@ -274,7 +274,7 @@ Marc 要把四套系統（含後台、管理頁）串進另一個入口網站。
 
 | 日期 | AI | 系統 | 內容 | commit |
 |---|---|---|---|---|
-| 2026-11-17 | Claude | BY27SS | 款卡加「機能素材」標章與中文說明：`tools/add_tech.py` 依 icon（特殊素材）、品名、概述、成分判斷每款用到的 GORE-TEX（PRO 3L／3L／2L／鞋款）、WINDSTOPPER、POLARTEC 各系列、PERTEX、PRIMALOFT、G-LOFT、羽絨（絨種／FP／絨羽比）、CORDURA、DYNEEMA、SCHOELLER、MERINO、VIBRAM，寫入 data.js 的 `tg`（卡片）與 `tech`（Excel「材質與科技」欄）；`fab` 成分加中文翻譯並保留原文。說明文字查自各品牌官方與通路資料；BLACK YAK 自家款名（AIR FLY、AIRDOT、HYPER 等）原廠沒給規格，不寫說明。重產 data.js 後要再跑 `python3 tools/add_tech.py data.js`。搜尋框可搜素材名。 | 待填 |
+| 2026-11-17 | Claude | BY27SS | 款卡加「機能素材」標章與中文說明：`tools/add_tech.py` 依 icon（特殊素材）、品名、概述、成分判斷每款用到的 GORE-TEX（PRO 3L／3L／2L／鞋款）、WINDSTOPPER、POLARTEC 各系列、PERTEX、PRIMALOFT、G-LOFT、羽絨（絨種／FP／絨羽比）、CORDURA、DYNEEMA、SCHOELLER、MERINO、VIBRAM，寫入 data.js 的 `tg`（卡片）與 `tech`（Excel「材質與科技」欄）；`fab` 成分加中文翻譯並保留原文。說明文字查自各品牌官方與通路資料；BLACK YAK 自家款名（AIR FLY、AIRDOT、HYPER 等）原廠沒給規格，不寫說明。重產 data.js 後要再跑 `python3 tools/add_tech.py data.js`。搜尋框可搜素材名。 | 4ee3848 |
 | 2026-11-17 | Claude | BY27SS | 款卡與 Excel 訂單本加「編號」：data.js 的 `no` 填入訂單目錄（客戶版 A4，27SS 1–349、27FW 350–533）的編號，一個款號一個編號，同款各色同編號；卡片款號列前面顯示「編號 N」，搜尋框可用「編號」或數字找；編號來源是 11/13 版訂單目錄 PDF，依款號對應（本系統 1–349）。 | a5313e8 |
 | 2026-11-16 | Grok Bot | BYS | 拿掉「展示會有樣品」和「此款號展示會有樣品，樣品是哪個顏色以現場為準」。特價商品等其他備註留著。卡片不再標綠，Excel 訂單本不再把色名和備註塗綠 | （本次） |
 | 2026-11-12 | Claude | BY27SS、BY27FW | 「此款…樣品」也標綠：卡片與 Excel 訂單本的綠底條件改成備註開頭是「展示會有樣品」或「此款」。27SS 151 款色備註改為「此款號展示會有樣品，樣品是哪個顏色以現場為準」（FW 鞋 30 款色文字不變） | （本次） |
