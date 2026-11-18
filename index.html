@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<script>(function(){var V='20261118070705';try{var q=new URLSearchParams(location.search),x=new XMLHttpRequest();x.open('GET','version.json?t='+Date.now(),false);x.setRequestHeader('Cache-Control','no-cache');x.send();if(x.status===200){var L=JSON.parse(x.responseText).v;if(L&&L!==V&&q.get('v')!==L){q.set('v',L);location.replace(location.pathname+'?'+q.toString()+location.hash);}}}catch(e){}})();</script>
+<script>(function(){var V='20261118071146';try{var q=new URLSearchParams(location.search),x=new XMLHttpRequest();x.open('GET','version.json?t='+Date.now(),false);x.setRequestHeader('Cache-Control','no-cache');x.send();if(x.status===200){var L=JSON.parse(x.responseText).v;if(L&&L!==V&&q.get('v')!==L){q.set('v',L);location.replace(location.pathname+'?'+q.toString()+location.hash);}}}catch(e){}})();</script>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -357,7 +357,7 @@ tfoot td{font-weight:700;background:var(--sunk)}
       <button id="v-order" aria-pressed="true">下單</button>
       <button id="v-mine" aria-pressed="false">我的訂單</button>
       <button id="v-admin" aria-pressed="false" hidden>訂單彙整</button>
-      <button id="v-story" type="button">季節策略</button>
+      <button id="v-story" type="button">季節商品資訊</button>
     </nav>
   </div>
 </header>
@@ -419,7 +419,7 @@ tfoot td{font-weight:700;background:var(--sunk)}
 
 <div id="overlay"></div>
 
-<script src="config.js?v=20261118070705"></script>
+<script src="config.js?v=20261118071146"></script>
 <script>
 /* GitHub Pages 版：以本機模擬原本 Claude 頁面的能力；送單改送到 Google Apps Script */
 (function(){
@@ -484,9 +484,9 @@ tfoot td{font-weight:700;background:var(--sunk)}
   window.claude={ use:async n=> n==='downloads'?downloads : n==='user'?user : n==='db'?(URL_?db:null) : null };
 })();
 </script>
-<script src="story.js?v=20261118070705"></script>
-<script src="data.js?v=20261118070705"></script>
-<script src="imgs.js?v=20261118070705"></script>
+<script src="story.js?v=20261118071146"></script>
+<script src="data.js?v=20261118071146"></script>
+<script src="imgs.js?v=20261118071146"></script>
 <script>
 (function(){
 const ITEMS = window.SDR_ITEMS || [];
@@ -625,7 +625,7 @@ function storyHTML(){
   const tbl=t=>`<div class="tbl"><table><thead><tr>${t.head.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${t.rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   return `<div class="story"><p class="lead">${esc(D.lead)}</p>${D.sections.map(sec=>`<h3>${esc(sec.h)}</h3>${sec.note?`<p class="snote">${esc(sec.note)}</p>`:''}${sec.table?tbl(sec.table):''}${sec.cards?`<div class="scards">${sec.cards.map(c=>`<div class="scard"><h4>${esc(c.t)}</h4><ul>${c.b.map(l=>`<li>${esc(l)}</li>`).join('')}</ul></div>`).join('')}</div>`:''}`).join('')}<p class="sfoot">${esc(D.foot||'')}</p></div>`;
 }
-function openStory(){ $('#overlay').innerHTML=`<div class="scrim"><div class="panel" role="dialog" aria-label="季節策略"><div class="phead"><h2>${esc((window.BY_STORY&&window.BY_STORY.season.title)||'季節策略')}</h2><button class="btn sm x" data-close>關閉</button></div>${storyHTML()}</div></div>`; }
+function openStory(){ $('#overlay').innerHTML=`<div class="scrim"><div class="panel" role="dialog" aria-label="季節商品資訊"><div class="phead"><h2>${esc((window.BY_STORY&&window.BY_STORY.season.title)||'季節商品資訊')}</h2><button class="btn sm x" data-close>關閉</button></div>${storyHTML()}</div></div>`; }
 $('#v-story').addEventListener('click',openStory);
 function renderList(){
   const arr=filtered();
